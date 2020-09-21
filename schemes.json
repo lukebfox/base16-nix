@@ -47,6 +47,12 @@
     "sha256": "0vlr9sxn8xx0n41fflaw1xw5s4hd6cfn7mdvlbs1hldlrd86ysir",
     "fetchSubmodules": false
   },
+  "colors": {
+    "url": "https://github.com/hakatashi/base16-colors-scheme",
+    "rev": "ecd803faa288bf4bd5a50977d90984143a512364",
+    "sha256": "1d05vprhrjamssly3hxyfjzmcnf743y39rr7js5y1xxn915qx7gi",
+    "fetchSubmodules": false
+  },
   "cupertino": {
     "url": "https://github.com/Defman21/base16-cupertino",
     "rev": "8df41b787a16640dd29f88251e95beed4bf9a5c5",
@@ -91,14 +97,20 @@
   },
   "equilibrium": {
     "url": "https://github.com/carloabelli/base16-equilibrium-scheme",
-    "rev": "509e488d8e707f558c155d88b1c02bf97242fda8",
-    "sha256": "05w3lyqw19y5f2j974pyh65726cjfq4lm9ma600kkc11flcpg9c3",
+    "rev": "87d0bd37e7eb682a33b1c5170e9a44e2af2301bd",
+    "sha256": "0pakiz34kd1n4l5nldl6y3hzxcl5q0pdvk3cdp20f8f7fz9rak3y",
     "fetchSubmodules": false
   },
   "espresso": {
     "url": "https://github.com/alexmirrington/base16-espresso-scheme",
     "rev": "2d7eddc312337ac09ff33c666a575f112d771524",
     "sha256": "1fvwz5n7z42404lpigl9d3mwfs3rl61fcaafvn4b4pw33l3zn7q6",
+    "fetchSubmodules": false
+  },
+  "eva": {
+    "url": "https://github.com/kjakapat/base16-eva-scheme",
+    "rev": "595ea6eff814ae462709f222e7af3492ee804e88",
+    "sha256": "1f788kr3nxdclg12n1g44g871zy9n5sfsxza3gm8nzzpzwz837gv",
     "fetchSubmodules": false
   },
   "framer": {
@@ -203,6 +215,12 @@
     "sha256": "0qsmixipxb12lalfpxxp2ni5k3byy67gnrdr2frryny9iwglw742",
     "fetchSubmodules": false
   },
+  "nebula": {
+    "url": "https://github.com/Misterio77/base16-nebula-scheme",
+    "rev": "cc6010630c5a7a7ec1f5928b37da9721f7988f9a",
+    "sha256": "0b7y8j038dqhdgqvhxsix6p3miih9h426sfwdvg010fpdid3ynwy",
+    "fetchSubmodules": false
+  },
   "nova": {
     "url": "https://github.com/gessig/base16-nova-scheme",
     "rev": "d0bc7162c69d61b62784e8fe5a9e60b3e6c4af3c",
@@ -229,8 +247,14 @@
   },
   "papercolor": {
     "url": "https://github.com/jonleopard/base16-papercolor-scheme",
-    "rev": "6a378195dd7bebab38c9d1b7f7f973603074d3cd",
-    "sha256": "1r61cm0v2mvsvm8v2dccxhlcx0fqi9kbq9ja869ib2b8lc3vxgn6",
+    "rev": "369290edecba0ede1208739b3be21fb8a6a5a2d5",
+    "sha256": "1bipf7bnackg7yz30nqvd6nylnspdwq194hdrasi0gwfvw6j62zx",
+    "fetchSubmodules": false
+  },
+  "pasque": {
+    "url": "https://github.com/Misterio77/base16-pasque-scheme",
+    "rev": "41dccec87745e7e73a8feaa899803b0c3ecd12f5",
+    "sha256": "0fyvnb2zyil0x4vz0b58d9hr30z0vlwl60kx3jl38rfn21ax6whj",
     "fetchSubmodules": false
   },
   "porple": {
@@ -259,8 +283,8 @@
   },
   "snazzy": {
     "url": "https://github.com/h404bi/base16-snazzy-scheme",
-    "rev": "ad9d2ded7bcf2fd631e876c8793d7317a9b9876a",
-    "sha256": "15w250dnji6r18wgqqjjbvnwy60n669zphyx86ak4iy9mcn91vij",
+    "rev": "5789feadb12b35604ed95a2fe1b028fafe64d7f1",
+    "sha256": "08wv03305c8asbdhd9b4i6gsgzk5qvnlrmdn7lyclpx4xd4qlpvx",
     "fetchSubmodules": false
   },
   "solarflare": {
@@ -289,8 +313,8 @@
   },
   "synth-midnight": {
     "url": "https://github.com/michael-ball/base16-synth-midnight-scheme",
-    "rev": "22d57ccdddc70045e7bcab186625d740f874c990",
-    "sha256": "1vggy2jpf35zv2m8z40gqh9f83jm8hs9zps9vi4z2c5ic9047xrs",
+    "rev": "bbb9d8300ab33c490038752f2e235f2467f7c6d8",
+    "sha256": "0xs02n792vq4gwz7qw80qf74d68i3x47zgsrrf35jl9mghn1csda",
     "fetchSubmodules": false
   },
   "tango": {
@@ -315,6 +339,12 @@
     "url": "https://github.com/joshwlewis/base16-unikitty",
     "rev": "28362f3a37a0e81b04d844aa5b2923ad63140734",
     "sha256": "09mg23rni68plamizmdhwq05k6w64l77m2h4sc65xjpcqaap74x5",
+    "fetchSubmodules": false
+  },
+  "vice": {
+    "url": "https://github.com/Thomashighbaugh/base16-vice-scheme",
+    "rev": "d91e59cc58772928afa0e3686bf0807e35ac4330",
+    "sha256": "03m1lssng85fs94a010j1lfn744ski1zzj2z85xvs1r86w0prznn",
     "fetchSubmodules": false
   },
   "woodland": {
