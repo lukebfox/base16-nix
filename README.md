@@ -84,39 +84,39 @@ N.b. this example roughly reflects the usage of @atpotts, but I haven't tried to
 If you package your NixOS configuration(s) via flakes, you can easily import this module. The following example shows how to add custom modules to home-manager including the one exported by this flake.
 ```nix
 {
-
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-20.03";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home.url    = "github:nix-community/home-manager";
     base16.url  = "github:lukebfox/base16-nix";
   };
-  outputs = inputs:
+  outputs = inputs: {
     nixosConfigurations.hostname = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-	  specialArgs = { inherit inputs; };
+      specialArgs = { inherit inputs; };
       modules = [
 
         inputs.home.nixosModules.home-manager
-		
+
         ({config, ... }:
-		 {
-		   # Will merge submodule definitions
-	       options.home-manager.users = lib.mkOption {
+         {
+           # Will merge submodule definitions
+           options.home-manager.users = lib.mkOption {
              type = lib.types.attrsOf (lib.types.submoduleWith {
 
                # Define any extra Home Manager modules you want here.
                modules = [ inputs.base16.hmModule.base16 ];
-			   
+
                # Makes specialArgs available to Home Manager modules as well.
                specialArgs = specialArgs // {
-	             # Allow accessing the parent NixOS configuration.
+                 # Allow accessing the parent NixOS configuration.
                  super = config;
                };
              });
+           };
          })
-
-	  ];
+      ];
     };
+  };
 }
 ```
 For a less contrived example, you can browse my Nix configuration files [here](https://github/lukebfox/nix-infrastructure).
