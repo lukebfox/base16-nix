@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 with lib;
 
@@ -42,7 +42,7 @@ let
   mustache = template-attrs: name: src:
     pkgs.stdenv.mkDerivation {
       name = "${name}-${template-attrs.scheme-slug}";
-      data = pkgs.writeText "${name}-data" (toJSON template-attrs);
+      data = pkgs.writeText "${name}-data" (builtins.toJSON template-attrs);
       inherit src;
       phases = [ "buildPhase" ];
       buildPhase = "${pkgs.mustache-go}/bin/mustache $data $src > $out";
