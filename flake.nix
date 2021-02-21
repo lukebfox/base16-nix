@@ -1,20 +1,18 @@
 {
   description = "Base16-template builder for nix.";
 
-  inputs.nixpkgs.url = "nixpkgs/release-20.03";
+  inputs.nixpkgs.url = "github:nixos/nixpkgs";
+  inputs.flake-utils.url = "github:numtide/flake-utils";
 
-  outputs = inputs@{ self, nixpkgs }:
-    let
-      pkgs = import nixpkgs { system = "x86_64-linux"; };
-    in {
+  outputs = inputs@{ self, nixpkgs, flake-utils, ... }:
+    {
+      # Home Manager Module
+      homeManagerModules.base16 = import ./base16.nix;
 
-    # Home-Manager Module
-    hmModules.base16 = import ./base16.nix;
-
-    # Nix shell definition. Enter with 'nix develop'. Inside, can use
-    # 'update-base16' to update the sources lists.
-    devShell.x86_64-linux = let
-      update = pkgs.writeShellScriptBin "update-base16" ''
+    } // flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+        updateScript = pkgs.writeShellScriptBin "update-base16" ''
           # should always be permitted to run to completion
 
           generate_sources () {
@@ -33,12 +31,19 @@
           generate_sources templates &
           generate_sources schemes &
           wait
-      '';
-    in pkgs.mkShell {
-      nativeBuildInputs = with pkgs; [
-        curl nix-prefetch-git gnused jq update
-      ];
-    };
-  };
-  
+        '';
+      in {
+        # Development environment.
+        # Enter with `nix develop` and while inside, you can use `update-base16`
+        # to update the sources lists.
+        devShell = pkgs.mkShell {
+          nativeBuildInputs = [
+            updateScript
+            pkgs.curl
+            pkgs.nix-prefetch-git
+            pkgs.gnused
+            pkgs.jq
+          ];
+        };
+      });
 }
